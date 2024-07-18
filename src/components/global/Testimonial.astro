@@ -1,0 +1,81 @@
+---
+import Rate from "../assets/Rate.astro";
+---
+
+<section>
+  <div
+    class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24"
+  >
+    <div>
+      <p
+        class="text-4xl tracking-tight font-medium text-black md:text-5xl font-display"
+      >
+        Confira a experiência e o <span class="sm:block"
+          >feedback de nossos clientes</span
+        >
+      </p>
+    </div>
+    <ul
+      class="mt-12 lg:mt-24 grid grid-cols-1 gap-10 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      <li>
+        <div class="h-full flex flex-col justify-between">
+          <div>
+            <div class="flex gap-x-1">
+              <Rate />
+            </div>
+            <p class="lg:text-sm text-gray-500 mt-4">
+              "Cheguei na Hexlab e por indicação e fiquei encantada com o
+              trabalho. O meu site ficou lindo, com tudo o que pedi!"
+            </p>
+          </div>
+          <footer class="mt-8">
+            <p class="text-gray-500 font-display">Emanoele Fonseca</p>
+            <p class="text-gray-400 text-sm">Advogada e CEO</p>
+          </footer>
+        </div>
+      </li>
+
+      <li>
+        <div class="h-full flex flex-col justify-between">
+          <div>
+            <div class="flex gap-x-1">
+              <Rate />
+            </div>
+            <p class="lg:text-sm text-gray-500 mt-4">
+              "A Hexlab construiu a landing page do meu livro em uma velocidade
+              altíssima haha! O trabalho ficou incrível e a página nem parece
+              carregar de tão rápida."
+            </p>
+          </div>
+          <footer class="mt-8">
+            <p class="text-gray-500 font-display">Guilherme Junqueira</p>
+            <p class="text-gray-400 text-sm">
+              Empresário, Investidor e Escritor
+            </p>
+          </footer>
+        </div>
+      </li>
+      
+      <li>
+        <div class="h-full flex flex-col justify-between">
+          <div>
+            <div class="flex gap-x-1">
+              <Rate />
+            </div>
+            <p class="lg:text-sm text-gray-500 mt-4">
+              "Trabalhar com a Hexlab é algo muito bom. Você sente a atenção e
+              carinho em cada uma das etapas da venda."
+            </p>
+          </div>
+          <footer class="mt-8">
+            <p class="text-gray-500 font-display">Mateus Andre</p>
+            <p class="text-gray-400 text-sm">
+              Sócio Administrador da RevendCell
+            </p>
+          </footer>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

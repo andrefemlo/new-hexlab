@@ -1,0 +1,101 @@
+<header class="bg-white border-b border-black/5 fixed w-full z-50">
+  <div class="w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16">
+    <div
+      x-data="{ open: false }"
+      class="relative flex flex-col w-full py-5 mx-auto bg-white md:items-center md:justify-between md:flex-row md:px-6"
+    >
+      <div class="flex flex-row items-center justify-between lg:justify-start">
+        <a href="/" class="text-black inline-flex items-center gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+          >
+            <path
+              opacity="0.2"
+              d="M24.6475 48C37.9023 48 48.6475 37.2548 48.6475 24C48.6475 10.7452 37.9023 0 24.6475 0C11.3926 0 0.647461 10.7452 0.647461 24C0.647461 37.2548 11.3926 48 24.6475 48Z"
+              fill="#3C70FF"></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M14.6953 11.6271C15.6383 10.8657 17.2691 10.9662 18.0455 11.8945C19.374 13.4752 20.6722 15.0785 21.9889 16.6671C23.6725 18.7205 25.3847 20.7544 27.0485 22.8212C24.1553 26.2537 21.3018 29.7136 18.4251 33.1576C17.9833 33.6626 17.6064 34.2315 17.037 34.6269C16.5 34.9997 15.7765 35.1166 15.1264 34.9784C14.5002 34.8358 13.9526 34.41 13.7185 33.8527C13.5638 33.5274 13.5664 33.1662 13.5929 32.819C13.6736 32.3201 13.9639 31.8748 14.2965 31.4837C16.8068 28.6208 19.3072 25.7505 21.8202 22.8888C21.2343 22.1786 20.6047 21.4963 20.0023 20.797C18.2776 18.835 16.5595 16.8681 14.8388 14.903C14.4764 14.5022 14.1477 14.0539 14.0161 13.5392C13.8521 12.8521 14.116 12.0894 14.6953 11.6271Z"
+              fill="#3C70FF"></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M31.8961 11.5136C32.3841 11.1811 33.0177 11.0757 33.6128 11.1427C34.333 11.2542 34.9864 11.7238 35.2364 12.3616C35.528 13.0773 35.2833 13.8893 34.7754 14.468C32.7703 16.7833 30.7441 19.0828 28.7476 21.4036C28.6405 21.3384 28.5796 21.23 28.4989 21.1423C27.7067 20.1878 26.8959 19.2454 26.1143 18.2842C27.6829 16.4032 29.2416 14.5155 30.8062 12.6314C31.1409 12.2373 31.4424 11.8036 31.8961 11.5136Z"
+              fill="#3C70FF"></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M28.5102 24.4789C28.5876 24.3966 28.6372 24.2852 28.7463 24.2334C30.7719 26.581 32.8153 28.9164 34.8489 31.258C35.1841 31.6338 35.5075 32.0389 35.6477 32.5152C35.8408 33.1719 35.6457 33.9169 35.1339 34.4109C34.249 35.2764 32.5429 35.2527 31.7123 34.3305C31.1316 33.6836 30.5986 33.0013 30.0358 32.341C28.6993 30.7207 27.3311 29.1211 26.0078 27.4923C26.8497 26.4933 27.675 25.4821 28.5102 24.4789Z"
+              fill="#3C70FF"></path>
+            <span class="text-2xl font-semibold">Hexlab</span>
+          </svg>
+        </a>
+        <button
+          @click="open = !open"
+          class="inline-flex items-center justify-center p-2 text-gray-400 hover:text-black focus:outline-none focus:text-black md:hidden"
+        >
+          <svg
+            class="w-6 h-6"
+            stroke="currentColor"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              :class="{'hidden': open, 'inline-flex': !open }"
+              class="inline-flex"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path
+              :class="{'hidden': !open, 'inline-flex': open }"
+              class="hidden"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav
+        :class="{'flex': open, 'hidden': !open}"
+        class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row"
+      >
+        <a
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto"
+          href="/#about">Sobre Nós</a
+        >
+        <a
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
+          href="/#services">Serviços</a
+        >
+
+        <a
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
+          href="/#testemunial"
+        >
+          Depoimentos</a
+        >
+
+        <a
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
+          href="/#portfolio"
+        >
+          Portfólio</a
+        >
+
+        <a
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
+          href="/#faq"
+        >
+          Perguntas Frequentes</a
+        >
+
+    </div>
+  </div>
+</header>
