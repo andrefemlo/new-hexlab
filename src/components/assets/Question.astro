@@ -1,0 +1,35 @@
+---
+const { question, answer } = Astro.props;
+---
+
+<div
+  x-data="{ expanded: false }"
+  :class="{ 'text-white': activeAccordion==id, 'text-white/80 hover:text-white': activeAccordion!=id }"
+  class="cursor-pointer group text-whit"
+>
+  <button
+    @click="expanded = ! expanded"
+    class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
+  >
+    <span>{ question }</span>
+
+    <svg
+      class="w-5 h-5 duration-300 ease-out text-white -rotate-[45deg]"
+      :class="{ '-rotate-[45deg]': expanded }"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"
+      ></path>
+    </svg>
+  </button>
+
+  <div x-show="expanded" x-collapse>
+    <div class="p-4 pt-2 text-white/80 font-light">
+      { answer }
+    </div>
+  </div>
+</div>
