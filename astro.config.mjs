@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: 'https://new-hexlab.vercel.app/',
   integrations: [tailwind(), sitemap(), astroImageTools],
-  base: '/build',
+  base: '/.',
   output: "static",
   // adapter: vercel()
 });
