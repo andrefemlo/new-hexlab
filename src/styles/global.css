@@ -1,26 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* CSS */
 :root {
   font-family: 'Outfit', sans-serif;
   font-feature-settings:
-  "liga" 1,
-  "calt" 1, /* Contextual Alternates */
-  "dlig" 1, /* Discretionary Ligatures */
-  "ss07" 1, /* fSquare punctuation */
-  "ss08" 1, /* Square quotes */
-  "zero" 1, /* Slashed zero */
-  "tnum" 1, /* Tabular numbers */
-    "cv03", /* Open six */
-    "cv04" 1, /* Open nine */
-    "cv01" 1, /* Alternate one */
-    "cv09", /* Flat-top three */
-    "cv02" 1; /* Open 4 */
+    "liga" 1,
+    "calt" 1,
+    /* Contextual Alternates */
+    "dlig" 1,
+    /* Discretionary Ligatures */
+    "ss07" 1,
+    /* fSquare punctuation */
+    "ss08" 1,
+    /* Square quotes */
+    "zero" 1,
+    /* Slashed zero */
+    "tnum" 1,
+    /* Tabular numbers */
+    "cv03",
+    /* Open six */
+    "cv04" 1,
+    /* Open nine */
+    "cv01" 1,
+    /* Alternate one */
+    "cv09",
+    /* Flat-top three */
+    "cv02" 1;
+  /* Open 4 */
 }
+
 @supports (font-variation-settings: normal) {
+
   /* Use variable font if supported */
   :root {
     font-family: 'Outfit', sans-serif;
   }
 }
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 200 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bricolagegrotesque/v2/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGIInE.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/outfit/v11/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }

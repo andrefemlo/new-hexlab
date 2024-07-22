@@ -39,6 +39,7 @@
           @click="open = !open"
           class="inline-flex items-center justify-center p-2 text-gray-400 hover:text-black focus:outline-none focus:text-black md:hidden"
         >
+          <span class="sr-only">Menu</span>
           <svg
             class="w-6 h-6"
             stroke="currentColor"
@@ -68,34 +69,36 @@
       >
         <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto"
-          href="/#about">Sobre Nós</a
+          href="/#about" onclick="lenis.scrollTo('#about')"
+          >Sobre Nós</a
         >
         <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/#services">Serviços</a
+          href="/#services" onclick="lenis.scrollTo('#services')"
+          >Serviços</a
         >
 
         <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/#testemunial"
+          href="/#testemunial" onclick="lenis.scrollTo('#testemunial')" 
         >
           Depoimentos</a
         >
 
         <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/#portfolio"
+          href="/#portfolio" onclick="lenis.scrollTo('#portfolio')"
         >
           Portfólio</a
         >
 
         <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/#faq"
+          href="/#faq" onclick="lenis.scrollTo('#faq')"
         >
           Perguntas Frequentes</a
         >
-
+      </nav>
     </div>
   </div>
 </header>

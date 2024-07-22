@@ -1,19 +1,24 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Navigation from "../components/global/Navigation.astro";
+import Header from "../components/global/Header.astro";
 import Footer from "../components/global/Footer.astro";
 ---
 
 <html
   lang="pt-br"
-  class="scroll-smooth selection:bg-accent-500 selection:text-white no-touchevents hydrated"
+  class="lenis selection:bg-accent-500 selection:text-white no-touchevents hydrated"
 >
   <head>
     <BaseHead />
   </head>
-  <body class="bg-white flex flex-col min-h-svh">
-    <Navigation />
+  <body class="bg-white flex flex-col min-h-dvh">
+    <Header />
     <main class="grow pt-10"><slot /></main>
     <Footer />
+
+    <script>
+      import '../components/assets/scripts/lenisSmoothScroll';
+    </script>    
+
   </body>
 </html>
