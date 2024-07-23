@@ -10,6 +10,6 @@ export default defineConfig({
   site: 'https://new-hexlab.vercel.app/',
   integrations: [tailwind(), sitemap(), astroImageTools, lenis()],
   base: '/.',
-  output: "hybrid",
+  output: "static",
   // adapter: vercel()
 });
