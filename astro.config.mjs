@@ -2,14 +2,14 @@ import { defineConfig } from 'astro/config';
 import { astroImageTools } from "astro-imagetools";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-// import vercel from "@astrojs/vercel/serverless";
+import lenis from "astro-lenis";
 
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://new-hexlab.vercel.app/',
-  integrations: [tailwind(), sitemap(), astroImageTools],
+  integrations: [tailwind(), sitemap(), astroImageTools, lenis()],
   base: '/.',
-  output: "static",
+  output: "hybrid",
   // adapter: vercel()
 });

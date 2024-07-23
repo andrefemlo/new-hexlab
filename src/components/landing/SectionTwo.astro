@@ -1,5 +1,6 @@
 ---
-import { Image } from 'astro:assets';
+import Image from "astro/components/Image.astro"
+
 ---
 
 <section>
@@ -41,9 +42,9 @@ import { Image } from 'astro:assets';
       >
         <div class="bg-gray-100 p-8 rounded-2xl overflow-hidden">
           <Image
-            alt="Lexingtøn thumbnail" inferSize={true}
+            alt="Lexingtøn thumbnail" inferSize
             class="border lg:rounded-3xl object-cover rounded shadow-2xl"
-            src="https://brightlight.lexingtonthemes.com/assets/dashboard.svg"
+            src="https://brightlight.lexingtonthemes.com/assets/dashboard.svg" width="3812" height="2382"
           />
         </div>
       </div>
