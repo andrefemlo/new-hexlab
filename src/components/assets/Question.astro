@@ -11,7 +11,7 @@ const { question, answer } = Astro.props;
     @click="expanded = ! expanded"
     class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
   >
-    <span class="font-semibold transition-all" :class="{ 'opacity-100': expanded, 'opacity-80 hover:opacity-100': ! expanded }">{ question }</span>
+    <span class="font-semibold transition-opacity" :class="{ 'opacity-100': expanded, 'opacity-90 hover:opacity-100': ! expanded }">{ question }</span>
 
     <svg
       class="w-5 h-5 duration-300 ease-out -rotate-[45deg]"

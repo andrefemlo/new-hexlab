@@ -1,0 +1,12 @@
+---
+const { headline, subheadline } = Astro.props;
+---
+
+<section class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 px-8 pt-24">
+    <h1
+        class="text-[8dvw] tracking-tight font-medium text-black md:text-5xl font-display capitalize"
+    >
+        {headline}
+    </h1>
+    <p class="text-xl opacity-80">{subheadline}</p>
+</section>

@@ -1,0 +1,25 @@
+---
+import Image from "astro/components/Image.astro";
+
+const { title, url, imageurl, imagealt } = Astro.props;
+
+---
+
+<a href={ url }>
+<div class="p-2 pb-4 rounded-xl hover:shadow-md hover:scale-105 transition-all">
+    <Image
+        inferSize
+        src={imageurl}
+        alt={imagealt}
+        class="w-full mx-auto rounded-lg"
+        loading="eager"
+    />
+
+    <h1
+        class="text-2xl tracking-tight font-medium text-black font-display"
+    >
+        {title}
+    </h1>
+    <small class="opacity-80 block text-end px-1.5">Ler Agora →</small>
+</div>
+</a>

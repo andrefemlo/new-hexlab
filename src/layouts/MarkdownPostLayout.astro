@@ -28,7 +28,7 @@ const { frontmatter } = Astro.props;
           {frontmatter.title}
         </h1>
         <p class="text-[4dvw] md:text-sm">
-          {frontmatter.pubDate}
+          {frontmatter.pubDate.toString().slice(0,10).split('-').reverse().join('/')}
         </p>
 
         <Image

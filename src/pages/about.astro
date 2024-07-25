@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionOne from "../components/landing/SectionOne.astro";
+import SectionTwo from "../components/landing/SectionTwo.astro";
+import Testimonial from "../components/global/Testimonial.astro";
+---
+
+<BaseLayout title="Sobre Nós | Hexlab">
+  <main
+    class="grow mx-auto w-full lg:px-24 max-w-6xl md:px-12 items-center px-8 py-24 pb-10"
+  >
+    <article class="pt-10 pb-16 md:pt-20 md:pb-24">
+      <h1
+        class="text-center text-[8dvw] tracking-tight font-medium text-black md:text-5xl font-display"
+      >
+        Sobre Nós
+      </h1>
+      <span
+        class="block text-center text-black/80 font-medium text-[4dvw] md:text-2xl font-display"
+      >
+        Conheça a História, os Valores e a Equipe que Impulsionam Nossa Agência!
+      </span>
+      <br /><br />
+
+      <h2 class="text-[7dvw] pt-10 md:text-2xl text-blue font-display">
+        Nossa História
+      </h2>
+      <p>
+        Desde nosso primeiro projeto, a Hexlab tem sido dedicada a transformar
+        visões ambiciosas em realidades digitais impactantes. O que começou como
+        uma pessoa apaixonada por tecnologia e design cresceu para se tornar uma
+        agência especialista no desenvolvimento de soluções digitais inovadoras.
+        Nossa jornada é marcada por desafios superados, projetos bem-sucedidos e
+        relacionamentos duradouros com nossos clientes.
+      </p>
+      <h2 class="text-[7dvw] mt-10 md:text-2xl text-blue font-display">
+        Missão e Visão
+      </h2>
+      <div class="columns-2">
+        <p>
+          <b>Missão:</b> Nossa missão é ajudar empresas a alcançar novos patamares
+          através de soluções digitais personalizadas que maximizem seu potencial e
+          impacto no mercado. Trabalhamos com dedicação e excelência para criar experiências
+          digitais que encantem usuários e gerem resultados mensuráveis. <br />
+          <b>Visão:</b> Nossa visão é ser a agência digital preferida por empresas
+          que buscam excelência e inovação. Queremos ser reconhecidos pela qualidade
+          de nosso trabalho. transformar negócios e inspirem mudanças positivas no
+          mundo digital.
+        </p>
+      </div>
+      <h2 class="text-[7dvw] mt-10 md:text-2xl text-blue font-display">
+        Nossos Valores
+      </h2>
+      <p>
+        <b>Excelência:</b> Buscamos a perfeição em cada detalhe, garantindo que nossos
+        clientes recebam o melhor em todas as etapas do projeto. mensuráveis. <br
+        />
+        <b>Inovação:</b> Estamos constantemente explorando novas tecnologias e métodos
+        para manter nossos serviços na vanguarda do mercado digital. <br />
+        <b>Transparência:</b> Valorizamos a comunicação aberta e honesta com nossos
+        clientes, construindo relacionamentos baseados na confiança. <br />
+        <b>Parceria:</b> Enxergamos nossos clientes como parceiros, colaborando estreitamente
+        para alcançar seus objetivos e superar expectativas.
+      </p>
+      <h1
+        class="text-[6dvw] mt-10 pt-6 tracking-tight font-medium text-black md:text-4xl font-display border-t border-slate-200 border-solid"
+      >
+        Nosso Processo de Trabalho
+      </h1>
+      <span
+        class="text-black/80 font-medium md:text-2xl font-display"
+      >
+        Como Transformamos Ideias em Resultados
+      </span>
+      <br /><br />
+
+      <p class="mt-6">
+        <b>Etapa 1: Descoberta</b>
+        <br />
+        Começamos entendendo profundamente as necessidades e objetivos do seu negócio,
+        realizando análises e pesquisas detalhadas.
+      </p>
+      <p class="mt-6">
+        <b>Etapa 2: Planejamento</b>
+        <br />
+        Desenvolvemos um plano estratégico e um roadmap claro para guiar o projeto,
+        assegurando que todas as partes estão alinhadas com os objetivos.
+      </p>
+      <p class="mt-6">
+        <b>Etapa 3: Design e Desenvolvimento</b>
+        <br />
+        Criamos designs visuais impactantes e desenvolvemos soluções técnicas robustas,
+        focadas na usabilidade e na performance.
+      </p>
+
+      <p class="mt-6">
+        <b>Etapa 4: Teste e Lançamento</b>
+        <br />
+        Realizamos testes rigorosos para garantir a qualidade e o funcionamento perfeito
+        antes de lançar o produto final.
+      </p>
+      <p class="mt-6">
+        <b>Etapa 5: Suporte e Otimização</b>
+        <br />
+        Oferecemos suporte contínuo e otimizamos constantemente para garantir que
+        seu site ou aplicação continue performando em alto nível.
+      </p>
+    </article>
+
+    <Testimonial />
+  </main>
+</BaseLayout>
