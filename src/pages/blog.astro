@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../layouts/BlogPost.astro";
 import Heading from "../layouts/Heading.astro";
 
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await Astro.glob("./blog/*.md");
 ---
 
 <BaseLayout title="Blog | Hexlab">

@@ -1,5 +1,6 @@
 ---
 import Image from "astro/components/Image.astro"
+import { Img } from "astro-imagetools/components";
 
 ---
 
@@ -32,7 +33,7 @@ import Image from "astro/components/Image.astro"
             </a>
             <a
               class="items-center justify-center h-12 font-medium rounded-xl focus-visible:outline-blue focus:outline-none inline-flex duration-200 text-blue lg:w-auto px-6 py-3 text-center text-blue/80 w-full underline underline-offset-2 hover:bg-accent-50"
-              href="#services">Saiba Mais</a
+              href="/about">Saiba Mais</a
             >
           </div>
         </div>
@@ -40,11 +41,11 @@ import Image from "astro/components/Image.astro"
       <div
         class="lg:mt-0 mt-12 h-full hidden lg:block rounded-3xl overflow-hidden border"
       >
-        <div class="bg-gray-100 p-8 rounded-2xl overflow-hidden">
-          <Image
-            alt="Lexingtøn thumbnail" inferSize
+        <div class="rounded-2xl">
+          <Img
+            alt="Mockup usando os sites da RevendCell e da Emanoele Fonseca"
             class="border lg:rounded-3xl object-cover rounded shadow-2xl"
-            src="https://brightlight.lexingtonthemes.com/assets/dashboard.svg" width="3812" height="2382"
+            src="/cases/projects-image.jpeg"
           />
         </div>
       </div>
