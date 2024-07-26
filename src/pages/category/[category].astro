@@ -4,7 +4,7 @@ import BlogPost from '../../layouts/BlogPost.astro';
 import Heading from '../../layouts/Heading.astro';
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob('../posts/*.md');
+  const allPosts = await Astro.glob('../blog/*.md');
 
   const uniqueCategorys = [...new Set(allPosts.map((post) => post.frontmatter.category).flat())];
 
