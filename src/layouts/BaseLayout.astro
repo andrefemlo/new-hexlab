@@ -3,6 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/global/Header.astro";
 import Footer from "../components/global/Footer.astro";
 
+import { slide } from "astro:transitions";
+
 const { title } = Astro.props;
 ---
 
@@ -16,7 +18,7 @@ const { title } = Astro.props;
   </head>
   <body class="bg-white flex flex-col min-h-dvh">
     <Header />
-    <main class="grow pt-10"><slot /></main>
+    <main class="grow pt-10" transition:animate={slide({ duration: '0.4s' })}><slot /></main>
     <Footer />
 
     <script>

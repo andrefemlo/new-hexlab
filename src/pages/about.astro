@@ -6,9 +6,7 @@ import Testimonial from "../components/global/Testimonial.astro";
 ---
 
 <BaseLayout title="Sobre Nós | Hexlab">
-  <main
-    class="grow mx-auto w-full max-w-7xl px-8 md:px-12 lg:px-24 pt-24"
-  >
+  <main class="grow mx-auto w-full max-w-7xl px-8 md:px-12 lg:px-24 pt-24">
     <article>
       <h1
         class="text-center text-[8dvw] tracking-tight font-medium text-black md:text-5xl font-display"
@@ -22,9 +20,7 @@ import Testimonial from "../components/global/Testimonial.astro";
       </span>
       <br /><br />
 
-      <h2 class="text-[7dvw] pt-10 md:text-2xl font-display">
-        Nossa História
-      </h2>
+      <h2 class="text-[7dvw] pt-10 md:text-2xl font-display">Nossa História</h2>
       <p>
         Desde nosso primeiro projeto, a Hexlab tem sido dedicada a transformar
         visões ambiciosas em realidades digitais impactantes. O que começou como
@@ -33,36 +29,43 @@ import Testimonial from "../components/global/Testimonial.astro";
         Nossa jornada é marcada por desafios superados, projetos bem-sucedidos e
         relacionamentos duradouros com nossos clientes.
       </p>
-      <h2 class="text-[7dvw] mt-10 md:text-2xl font-display">
-        Missão e Visão
-      </h2>
-      <div class="columns-2">
+      <h2 class="text-[7dvw] mt-10 md:text-2xl font-display">Missão e Visão</h2>
+      <div class="sm:columns-2">
         <p>
-          <b>Missão:</b> Nossa missão é ajudar empresas a alcançar novos patamares
-          através de soluções digitais personalizadas que maximizem seu potencial
-          e impacto no mercado. Trabalhamos com dedicação e excelência para criar
-          experiências digitais que encantem usuários e gerem resultados mensuráveis.
-          <br />
-          <b>Visão:</b> Nossa visão é ser a agência digital preferida por empresas
-          que buscam excelência e inovação. Queremos ser reconhecidos pela qualidade
-          de nosso trabalho. transformar negócios e inspirem mudanças positivas no
-          mundo digital.
+          <span>
+            <b>Missão:</b> Nossa missão é ajudar empresas a alcançar novos patamares
+            através de soluções digitais personalizadas que maximizem seu potencial
+            e impacto no mercado. Trabalhamos com dedicação e excelência para criar
+            experiências digitais que encantem usuários e gerem resultados mensuráveis.
+            <br />
+          </span>
+          <span class="max-sm:block max-sm:pt-3">
+            <b>Visão:</b> Nossa visão é ser a agência digital preferida por empresas
+            que buscam excelência e inovação. Queremos ser reconhecidos pela qualidade
+            de nosso trabalho. transformar negócios e inspirem mudanças positivas no
+            mundo digital.
+          </span>
         </p>
       </div>
-      <h2 class="text-[7dvw] mt-10 md:text-2xl font-display">
-        Nossos Valores
-      </h2>
-      <p>
-        <b>Excelência:</b> Buscamos a perfeição em cada detalhe, garantindo que nossos
-        clientes recebam o melhor em todas as etapas do projeto. mensuráveis. <br
-        />
-        <b>Inovação:</b> Estamos constantemente explorando novas tecnologias e métodos
-        para manter nossos serviços na vanguarda do mercado digital. <br />
-        <b>Transparência:</b> Valorizamos a comunicação aberta e honesta com nossos
-        clientes, construindo relacionamentos baseados na confiança. <br />
-        <b>Parceria:</b> Enxergamos nossos clientes como parceiros, colaborando estreitamente
-        para alcançar seus objetivos e superar expectativas.
-      </p>
+      <h2 class="text-[7dvw] mt-10 md:text-2xl font-display">Nossos Valores</h2>
+      <ul class="space-y-3">
+        <li>
+          <b>Excelência:</b> Buscamos a perfeição em cada detalhe, garantindo que nossos
+          clientes recebam o melhor em todas as etapas do projeto. mensuráveis. <br />
+        </li>
+        <li>
+          <b>Inovação:</b> Estamos constantemente explorando novas tecnologias e métodos
+          para manter nossos serviços na vanguarda do mercado digital. <br />
+        </li>
+        <li>
+          <b>Transparência:</b> Valorizamos a comunicação aberta e honesta com nossos
+          clientes, construindo relacionamentos baseados na confiança. <br />
+        </li>
+        <li>
+          <b>Parceria:</b> Enxergamos nossos clientes como parceiros, colaborando estreitamente
+          para alcançar seus objetivos e superar expectativas.
+        </li>
+      </ul>
       <h1
         class="text-[6dvw] mt-10 pt-6 tracking-tight font-medium text-black md:text-4xl font-display border-t border-slate-200 border-solid"
       >
@@ -106,5 +109,5 @@ import Testimonial from "../components/global/Testimonial.astro";
       </p>
     </article>
   </main>
-    <Testimonial />
+  <Testimonial />
 </BaseLayout>

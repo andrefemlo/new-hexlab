@@ -8,7 +8,7 @@ import playformInline from "@playform/inline";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://new-hexlab.vercel.app/',
+  site: 'https://hexlab.online/',
   integrations: [tailwind(), sitemap(), astroImageTools, lenis(), (await import("@playform/inline")).default()],
   base: '/.',
   output: "static"

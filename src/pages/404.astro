@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cta from "../components/global/Cta.astro";
+import Heading from "../layouts/Heading.astro";
+---
+
+<BaseLayout title="Hexlab | Desenvolvimento de Site">
+    <Heading headline="Ops..." subheadline="Nada encontrado por aqui! :(" />
+    <section class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 px-8 pt-10">
+    <div class="btn">
+        <a
+            href="/"
+            class="items-center justify-center h-12 font-medium rounded-xl focus-visible:outline-blue focus:outline-none inline-flex bg-blue border-2 border-blue duration-200 focus-visible:ring-blue hover:bg-transparent hover:border-blue hover:text-blue lg:w-auto px-6 py-3 text-center text-white w-full"
+            >Voltar para a Home</a>
+    </div>
+    <div class="spacing pb-20"></div>
+    </section>
+    <Cta />
+</BaseLayout>

@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <meta charset="utf-8" />
@@ -37,11 +37,13 @@ import "../styles/global.css";
 />
 <link rel="manifest" href="/favicons/site.webmanifest" />
 <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
-
 <meta name="msapplication-TileColor" content="#1f2127" />
 <meta name="theme-color" content="#1f2127" />
 <meta name="msapplication-TileColor" content="#ffffff" />
 <meta name="theme-color" content="#ffffff" />
+
+<ViewTransitions />
+
 <!--Ionicons -->
 <script
   type="module"

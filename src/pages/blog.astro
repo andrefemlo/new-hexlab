@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../layouts/BlogPost.astro";
 import Heading from "../layouts/Heading.astro";
+import Section from "../layouts/Section.astro";
 
 const allPosts = await Astro.glob("./blog/*.md");
 ---
@@ -12,7 +13,7 @@ const allPosts = await Astro.glob("./blog/*.md");
     subheadline="Fique por dentro dos nossos conteúdos!"
   />
 
-  <section class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 px-8">
+  <Section>
     <div
       class="grid sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4 pb-20 pt-10"
     >
@@ -27,5 +28,5 @@ const allPosts = await Astro.glob("./blog/*.md");
         ))
       }
     </div>
-  </section>
+  </Section>
 </BaseLayout>

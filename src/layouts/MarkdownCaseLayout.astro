@@ -13,15 +13,14 @@ const { frontmatter } = Astro.props;
   class="lenis selection:bg-accent-500 selection:text-white no-touchevents hydrated"
 >
   <head>
-    <BaseHead />
-    <title>{frontmatter.title} | Hexlab</title>
+    <BaseHead/>
+    <title>{ frontmatter.title } | Hexlab</title>
   </head>
   <body class="flex flex-col min-h-dvh">
     <Header />
 
     <main
-      class="grow mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24 pb-10"
-      transition:animate={slide({ duration: "0.4s" })}
+      class="grow mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24 pb-10" transition:animate={slide({ duration: '0.4s' })}
     >
       <article class="pt-10 pb-16 md:pt-20 md:pb-24">
         <h1
@@ -30,21 +29,14 @@ const { frontmatter } = Astro.props;
           {frontmatter.title}
         </h1>
         <p class="text-[4dvw] md:text-sm">
-          {
-            frontmatter.pubDate
-              .toString()
-              .slice(0, 10)
-              .split("-")
-              .reverse()
-              .join("/")
-          }
+          {frontmatter.pubDate.toString().slice(0,10).split('-').reverse().join('/')}
         </p>
 
         <Image
           inferSize
           src={frontmatter.image.url}
           alt={frontmatter.image.alt}
-          class="w-full mx-auto rounded-lg my-4"
+          class="w-full mx-auto rounded-lg my-4 "
           loading="eager"
         />
 
