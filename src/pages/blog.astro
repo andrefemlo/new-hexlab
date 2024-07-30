@@ -3,8 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../layouts/BlogPost.astro";
 import Heading from "../layouts/Heading.astro";
 import Section from "../layouts/Section.astro";
+import { getAllPosts } from "../lib/cosmic";
 
-const allPosts = await Astro.glob("./blog/*.md");
+const allPosts = await getAllPosts();
 ---
 
 <BaseLayout title="Blog | Hexlab">
@@ -20,10 +21,10 @@ const allPosts = await Astro.glob("./blog/*.md");
       {
         allPosts.map((post) => (
           <BlogPost
-            title={post.frontmatter.title}
-            url={post.url}
-            imageurl={post.frontmatter.image.url}
-            imagealt={post.frontmatter.image.alt}
+            title={ post.title }
+            url={ post.slug }
+            imageurl={ `${post.metadata.cover_image.imgix_url}?w=500&auto=format,compression` }
+            imagealt={ post.title }
           />
         ))
       }

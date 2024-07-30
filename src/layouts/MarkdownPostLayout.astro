@@ -39,6 +39,22 @@ const { frontmatter } = Astro.props;
               .join("/")
           }
         </p>
+        <div class="categories pt-4 pb-8">
+          <ul class="flex gap-1 gap-y-5 sm:gap-2 sm:gap-y-4 flex-wrap">
+            {
+              frontmatter.category.map((category) => (
+                <li class="tag">
+                  <a
+                    class="px-4 py-2 rounded-full border border-solid border-blue border-opacity-40 hover:bg-blue hover:text-white transition-colors duration-150 hover:drop-shadow-md"
+                    href={`/category/${category}`}
+                  >
+                    {category}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
 
         <Image
           inferSize
