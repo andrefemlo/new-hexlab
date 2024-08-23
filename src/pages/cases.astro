@@ -1,33 +1,35 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import Testimonial from "../components/global/Testimonial.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../layouts/BlogPost.astro";
 import Heading from "../layouts/Heading.astro";
 import Section from "../layouts/Section.astro";
-import BlogPost from "../layouts/BlogPost.astro";
+import { getAllCases } from "../lib/cosmic";
 
-const allPosts = await Astro.glob("./cases/*.md");
+const allCases = await getAllCases();
 ---
 
-<BaseLayout title="Hexlab | Desenvolvimento de Site">
+<BaseLayout title="Cases | Hexlab">
   <Heading
     headline="Portfólio"
     subheadline="Confira aqui nossos cases de sucesso!"
   />
+
   <Section>
     <div
-    class="grid sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4 pb-20 pt-10"
-  >
-    {
-      allPosts.map((post) => (
-        <BlogPost
-          title={post.frontmatter.title}
-          url={post.url}
-          imageurl={post.frontmatter.image.url}
-          imagealt={post.frontmatter.image.alt}
-        />
-      ))
-    }
-  </div>
+      class="grid sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4 pb-20 pt-10"
+    >
+      {
+        allCases.map((post) => (
+          <BlogPost
+            title={ post.title }
+            url={ `/cases/${post.slug}` }
+            imageurl={ `${post.metadata.cover_image.imgix_url}?w=500&auto=format,compression` }
+            imagealt={ post.title }
+          />
+        ))
+      }
+    </div>
   </Section>
   <Testimonial />
 </BaseLayout>

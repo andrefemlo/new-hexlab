@@ -1,0 +1,9 @@
+---
+import MDXContent from '@astrojs/mdx';
+import { marked } from 'marked'
+
+const { content } = Astro.props;
+const htmlContent = marked(content);
+---
+
+<div innerHTML={htmlContent}></div>

@@ -39,13 +39,20 @@ import { Img } from "astro-imagetools/components";
         </div>
       </div>
       <div
-        class="lg:mt-0 mt-12 h-full hidden lg:block rounded-3xl overflow-hidden border"
+        class="lg:mt-0 mt-12 h-full block rounded-3xl overflow-hidden border"
       >
-        <div class="rounded-2xl">
+        <div class="rounded-2xl h-full">
           <Img
             alt="Mockup usando os sites da RevendCell e da Emanoele Fonseca"
-            class="border lg:rounded-3xl object-cover rounded shadow-2xl"
             src="/cases/projects-image.jpeg"
+            layout="fill"
+            placeholder="blurred"
+            attributes={{
+              link: {
+                class: "border lg:rounded-3xl object-cover h-full rounded shadow-2xl"
+              }
+            }}
+          
           />
         </div>
       </div>

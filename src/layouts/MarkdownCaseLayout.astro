@@ -30,6 +30,7 @@ const { frontmatter } = Astro.props;
         </h1>
         <p class="text-[4dvw] md:text-sm">
           {frontmatter.pubDate.toString().slice(0,10).split('-').reverse().join('/')}
+          <slot />
         </p>
 
         <Image
