@@ -5,7 +5,28 @@ import Footer from "../components/global/Footer.astro";
 
 import { slide } from "astro:transitions";
 
-const { title } = Astro.props;
+// Defina os valores padrões
+const defaultTitle = "Hexlab";
+const defaultMetaDescription =
+  "Agência especializada em criação de sites, oferecendo soluções completas de desenvolvimento web, design responsivo, e otimização SEO. Transformamos ideias em websites modernos e profissionais para impulsionar o seu negócio";
+const defaultMetaKeywords =
+  "Criação de Sites, Desenvolvimento Web, Agência de Web Design, Design Responsivo, Sites Personalizados, Desenvolvimento de E-commerce, Soluções Digitais, Otimização SEO, UX/UI Design, Sites Modernos, Websites Profissionais, Agência Digital, Marketing Digital, Manutenção de Sites, Lançamento de Sites";
+const defaultMetaRobots = "index, follow";
+const defaultSharedImage = "/favicons/apple-touch-icon.png";
+const defaultPageType = "website";
+const currentUrl = Astro.url.href;
+
+// Use os valores passados por props ou os valores padrões
+const {
+  title = defaultTitle,
+  metaDescription = defaultMetaDescription,
+  metaKeywords = defaultMetaKeywords,
+  metaRobots = defaultMetaRobots,
+  ogTitle = defaultTitle,
+  ogUrl = currentUrl,
+  ogType = defaultPageType,
+  ogImage = defaultSharedImage,
+} = Astro.props;
 ---
 
 <html
@@ -14,16 +35,27 @@ const { title } = Astro.props;
 >
   <head>
     <BaseHead />
-    <title>{ title }</title>
+    <title>{title}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="robots" content={metaRobots} />
+    <meta name="keywords" content={metaKeywords} />
+
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:type" content={ogType} />
   </head>
   <body class="bg-white flex flex-col min-h-dvh">
     <Header />
-    <main class="grow pt-10" transition:animate={slide({ duration: '0.4s' })}><slot /></main>
+    <main class="grow pt-10" transition:animate={slide({ duration: "0.4s" })}>
+      <slot />
+    </main>
     <Footer />
 
     <script>
-      import '../components/assets/scripts/lenisSmoothScroll';
-    </script>    
-
+      import "../components/assets/scripts/lenisSmoothScroll";
+    </script>
   </body>
 </html>

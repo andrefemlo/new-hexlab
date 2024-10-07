@@ -1,15 +1,12 @@
 ---
 // Layout
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/global/Header.astro";
-import Footer from "../../components/global/Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Section from "../../layouts/Section.astro";
+import Heading from "../../layouts/Heading.astro";
 
 // Components
 import Image from "astro/components/Image.astro";
 import { marked } from "marked";
-
-// Effects
-import { slide } from "astro:transitions";
 
 import { getAllPosts } from "../../lib/cosmic";
 
@@ -25,49 +22,35 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+
+const metaDescription = "{post.metadata.excerpt}";
 ---
 
-<html
-  lang="pt-br"
-  class="lenis selection:bg-accent-500 selection:text-white no-touchevents hydrated"
+<BaseLayout
+  title={post.title}
+  metaDescription={post.metadata.excerpt}
+  ogImage={`${post.metadata.cover_image.imgix_url}`}
+  ogType="article"
 >
-  <head>
-    <BaseHead />
-    <title>{post.title} | Hexlab</title>
-  </head>
-  <body class="flex flex-col min-h-dvh">
-    <Header />
+  <article class="pb-20">
+    <Heading headline={post.title} />
 
-    <main
-      class="grow mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24 pb-10"
-      transition:animate={slide({ duration: "0.4s" })}
-    >
-      <article class="pt-10 pb-16 md:pt-20 md:pb-24">
-        <h1
-          class="text-[8dvw] tracking-tight font-medium text-black md:text-5xl font-display"
-        >
-          {post.title}
-        </h1>
+    <Section>
+      <div class="text-base text-opacity-85 pt-2 pb-4">
+        {post.metadata.excerpt}
+      </div>
+      <Image
+        inferSize
+        src={`${post.metadata.cover_image.imgix_url}`}
+        alt={post.title}
+        class="w-full mx-auto rounded-lg my-4 mb-10"
+        loading="eager"
+      />
 
-        <Image
-          inferSize
-          src={`${post.metadata.cover_image.imgix_url}`}
-          alt={post.title}
-          class="w-full mx-auto rounded-lg my-4 mb-10"
-          loading="eager"
-        />
-
-        <div
-          class="prose max-w-none prose-headings:font-display prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg prose-hr:2xl prose-img:w-full prose-img:mx-auto prose-img:rounded-lg prose-a:text-blue"
-          set:html={marked(post.metadata.content)}
-        />
-      </article>
-    </main>
-
-    <Footer />
-
-    <script>
-      import "../../components/assets/scripts/lenisSmoothScroll";
-    </script>
-  </body>
-</html>
+      <div
+        class="prose max-w-none prose-headings:font-display prose-h2:text-[6dvw] md:prose-h2:text-3xl prose-h3:text-[4dvw] md:prose-h3:text-2xl prose-h4:text-[2dvw] md:prose-h4:text-lg prose-img:w-full prose-img:mx-auto prose-img:rounded-lg prose-a:text-blue"
+        set:html={marked(post.metadata.content)}
+      />
+    </Section>
+  </article>
+</BaseLayout>

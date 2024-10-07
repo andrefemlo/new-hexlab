@@ -1,5 +1,4 @@
 import { createBucketClient } from '@cosmicjs/sdk'
-import axios from 'axios';
 
 const cosmic = createBucketClient({
   bucketSlug: import.meta.env.BUCKET_SLUG,
@@ -11,7 +10,7 @@ export async function getAllPosts() {
     .find({
       type: 'posts'
     })
-    .props('title,slug,metadata,created_at').sort('-created_at').depth(2)
+    .props('title,slug,metadata,created_at,excerpt').sort('-created_at').depth(2)
   return data.objects
 }
 export async function getAllCases() {

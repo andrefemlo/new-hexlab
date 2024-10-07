@@ -21,8 +21,8 @@ module.exports = {
         "9xl": ["8rem", { lineHeight: "1" }],
       },
       colors: {
-        black : "#121212",
-        blue  : "#3c70ff",
+        black: "#121212",
+        blue: "#3c70ff",
         accent: {
           50: "#EBEDFF",
           100: "#D6DAFF",
@@ -40,6 +40,15 @@ module.exports = {
         sans: ["Outfit", ...defaultTheme.fontFamily.sans],
         display: ["Bricolage Grotesque", ...defaultTheme.fontFamily.sans],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'h1, h2, h3, h4, h5, h6': {
+              fontWeight: '500'
+            },
+          }
+        }
+      }
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
