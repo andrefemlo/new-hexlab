@@ -46,6 +46,25 @@ const {
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={ogUrl} />
     <meta property="og:type" content={ogType} />
+
+    <!-- Analytics -->
+
+    <!-- Clarity -->
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "ogz1obleb8");
+    </script>
+    <!--  -->
   </head>
   <body class="bg-white flex flex-col min-h-dvh">
     <Header />
