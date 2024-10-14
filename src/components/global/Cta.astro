@@ -2,12 +2,16 @@
 import { Img } from "astro-imagetools/components";
 ---
 
-<section class="bg-zinc-50">
-  <div class="relative 2xl:max-w-7xl mx-auto">
+<section class="bg-zinc-100">
+  <div class="relative mx-auto">
     <div class="lg:absolute lg:inset-0 lg:left-1/2 overflow-hidden">
       <Img
         src="/cases/old-hexlab-portfolio.jpeg"
         alt="Mockup do projeto do antigo site da Hexlab"
+        layout="fill"
+        placeholder="blurred"
+        format="webp"
+        quality={100}
       />
     </div>
     <div

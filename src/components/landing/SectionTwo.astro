@@ -1,7 +1,6 @@
 ---
-import Image from "astro/components/Image.astro"
+import Image from "astro/components/Image.astro";
 import { Img } from "astro-imagetools/components";
-
 ---
 
 <section>
@@ -19,11 +18,13 @@ import { Img } from "astro-imagetools/components";
             O Que Nos Impulsiona
           </p>
           <p class="text-base mt-4 text-gray-500">
-            Desde nosso primeiro projeto, nossa agência tem sido pioneira em
-            entregar soluções digitais que transformam negócios. <br />
-            Nosso compromisso é com a ciência. Somos apaixonados. Buscamos sempre
-            trazer inovações tecnologicas e melhorar os resultados por meio de técnicas
-            de persuasão para gerar ótimos resultados no seu público.
+            Desde nosso primeiro projeto, temos dedicado energias em transformar
+            a presença de nossos clientes na internet. <br />
+            <br />
+            Nosso compromisso é com a inovação. Somos apaixonados. Buscamos sempre
+            trazer tecnologicas mais performaticas, designs mais inovadores, a melhora
+            dos resultados, aumentar o valor reconhecido da sua empresa, melhorar
+            a experiência em seu site, otimizar o seu projeto e muito mais.
           </p>
           <div class="flex gap-3 mt-10 flex-col sm:flex-row">
             <a
@@ -33,7 +34,7 @@ import { Img } from "astro-imagetools/components";
             </a>
             <a
               class="items-center justify-center h-12 font-medium rounded-xl focus-visible:outline-blue focus:outline-none inline-flex duration-200 text-blue lg:w-auto px-6 py-3 text-center text-blue/80 w-full underline underline-offset-2 hover:bg-accent-50"
-              href="/about">Saiba Mais</a
+              href="/about">Conheça</a
             >
           </div>
         </div>
@@ -46,13 +47,15 @@ import { Img } from "astro-imagetools/components";
             alt="Mockup usando os sites da RevendCell e da Emanoele Fonseca"
             src="/cases/projects-image.jpeg"
             layout="fill"
+            format="webp"
+            quality={100}
             placeholder="blurred"
             attributes={{
               link: {
-                class: "border lg:rounded-3xl object-cover h-full rounded shadow-2xl"
-              }
+                class:
+                  "border lg:rounded-3xl object-cover h-full rounded shadow-2xl",
+              },
             }}
-          
           />
         </div>
       </div>

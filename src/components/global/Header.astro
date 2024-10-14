@@ -1,12 +1,45 @@
-<header class="bg-white border-b border-black/5 fixed w-full z-50" transition:animate="none">
+---
+const links = [
+  {
+    ref: "01",
+    name: "Início",
+    href: "/",
+  },
+  {
+    ref: "02",
+    name: "Sobre Nós",
+    href: "/about",
+  },
+  {
+    ref: "03",
+    name: "Serviços",
+    href: "/services",
+  },
+  {
+    ref: "04",
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    ref: "05",
+    name: "Portfólio",
+    href: "/cases",
+  },
+];
+---
+
+<header
+  class="bg-zinc-50 border-b border-black/5 fixed w-full z-50"
+  transition:animate="none"
+>
   <div class="w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16">
     <div
       x-data="{ open: false }"
-      class="relative flex flex-col w-full py-5 mx-auto bg-white md:items-center md:justify-between md:flex-row md:px-6"
+      class="relative flex flex-col w-full py-5 mx-auto"
     >
-      <div class="flex flex-row items-center justify-between lg:justify-start">
-        <a href="/" class="text-black inline-flex items-center gap-3">
-          <svg
+      <div class="flex flex-row items-center justify-between">
+        <a href="/" class="text-black inline-flex items-center gap-2">
+          <!-- <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"
             height="48"
@@ -32,17 +65,18 @@
               clip-rule="evenodd"
               d="M28.5102 24.4789C28.5876 24.3966 28.6372 24.2852 28.7463 24.2334C30.7719 26.581 32.8153 28.9164 34.8489 31.258C35.1841 31.6338 35.5075 32.0389 35.6477 32.5152C35.8408 33.1719 35.6457 33.9169 35.1339 34.4109C34.249 35.2764 32.5429 35.2527 31.7123 34.3305C31.1316 33.6836 30.5986 33.0013 30.0358 32.341C28.6993 30.7207 27.3311 29.1211 26.0078 27.4923C26.8497 26.4933 27.675 25.4821 28.5102 24.4789Z"
               fill="#3C70FF"></path>
-            <span class="text-2xl font-semibold">Hexlab</span>
-          </svg>
+          </svg> -->
+          <span class="text-2xl font-semibold">Hexlab</span>
         </a>
         <button
           @click="open = !open"
-          class="inline-flex items-center justify-center p-2 text-gray-400 hover:text-black focus:outline-none focus:text-black md:hidden"
+          class="inline-flex items-center justify-center h-6 py-2 w-fit text-black hover:text-black focus:text-black stroke-[#000000]"
+          x-collapse.duration.500ms
         >
           <span class="sr-only">Menu</span>
           <svg
-            class="w-6 h-6"
-            stroke="currentColor"
+            class="w-6 h-6 flex flex-col gap-1"
+            stroke=""
             fill="none"
             viewBox="0 0 24 24"
           >
@@ -65,33 +99,53 @@
       </div>
       <nav
         :class="{'flex': open, 'hidden': !open}"
-        class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row"
+        class="flex-col items-center flex-grow hidden"
+        x-show="open"
+        x-collapse.duration.300ms
       >
-        <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto"
-          href="/about"
-          >Sobre Nós</a
+        <div
+          class="grid grid-cols-1 w-full gap-10 sm:pb-10 pt-6 lg:grid-cols-2 lg:pt-10"
         >
-        <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/services"
-          >Serviços</a
-        >
+          <div
+            class="bg-zinc-100 dark:bg-primary-400/10 rounded-3xl sm:grid place-content-center hidden"
+          >
+            <p class="p-10 text-lg italic leading-loose">
+              <span class="font-medium">Hexlab</span> é uma empresa de desenvolvimento
+              focada em performance, usabilidade e conversão. Somos o que o seu negócio
+              precisa para virar o jogo.
+            </p>
+          </div>
 
-        <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/blog" 
-        >
-          Blog</a
-        >
-
-        <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/cases"
-        >
-          Portfólio</a
-        >
-
+          <!-- Navigation -->
+          <nav
+            class="divide-primary-900/10 dark:divide-primary-300/10 flex flex-col gap-1 divide-y"
+          >
+            {
+              links.map((link) => (
+                <a
+                  href={link.href}
+                  class="text-primary-950 dark:text-primary-200 group inline-flex py-6 text-xl font-medium tracking-tight transition focus-visible:outline-none sm:py-3 sm:text-2xl"
+                >
+                  <div class="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+                    <div class="flex items-center gap-6">
+                      <span class="text-xs">{link.ref}</span>
+                      <span class="group-hover:underline">{link.name}</span>
+                    </div>
+                    <svg
+                      class="text-primary-600 dark:text-primary-400 h-6 w-6 sm:h-8 sm:w-8"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                    </svg>
+                  </div>
+                </a>
+              ))
+            }
+          </nav>
+        </div>
       </nav>
     </div>
   </div>
