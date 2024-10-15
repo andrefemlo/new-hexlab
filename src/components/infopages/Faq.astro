@@ -4,14 +4,12 @@ import Question from "../assets/Question.astro";
 
 <section class="*:text-black">
   <div
-    class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24 scroll-mt-12"
+    class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-20 scroll-mt-12"
   >
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12">
       <div class="text-center lg:text-left">
         <div>
-          <p
-            class="text-3xl font-normal tracking-tight font-display"
-          >
+          <p class="text-3xl font-normal tracking-tight font-display">
             Perguntas frequentes
           </p>
           <p class="text-base mt-4 opacity-80">
@@ -22,19 +20,39 @@ import Question from "../assets/Question.astro";
 
       <div
         x-data="{ activeAccordion: '', setActiveAccordion(id) { this.activeAccordion = (this.activeAccordion == id) ? '' : id }}"
-        class="relative w-full mx-auto font-normal lg:col-span-2"
+        class="relative w-full mx-auto font-normal lg:col-span-2 divide-y divide-zinc-200"
       >
         <Question
           question="Por quê contar com a Hexlab?"
           answer="A Hexlab atua com desenvolvedores experiêntes e atenciosos, com gestores cuidadosos, com designers criativos e com UX's altamente habilidosos. Estamos prontos para atender qualquer demanda que possa aparecer e elevar a sua empresa para outro patamar!"
         />
         <Question
-          question="Por quê contar com a Hexlab?"
-          answer="A Hexlab atua com desenvolvedores experiêntes e atenciosos, com gestores cuidadosos, com designers criativos e com UX's altamente habilidosos. Estamos prontos para atender qualquer demanda que possa aparecer e elevar a sua empresa para outro patamar!"
+          question="Com quais tecnologias a Hexlab Trabalha?"
+          answer="Depende do objetivo. Utilizamos figma no WebDesign. Photoshop para a criação de suas artes. Utilizamos a CDN da Cloudflare e a hospedagem, em muito dos casos, optamos pela CloudflarePages (depende do escopo do projeto). Para desenvolvimento de sites nós podemos utilizar Astro, JS+HTML+TailwindCSS, Wordpress, Framer e WebFlow."
         />
         <Question
-          question="Por quê contar com a Hexlab?"
-          answer="A Hexlab atua com desenvolvedores experiêntes e atenciosos, com gestores cuidadosos, com designers criativos e com UX's altamente habilidosos. Estamos prontos para atender qualquer demanda que possa aparecer e elevar a sua empresa para outro patamar!"
+          question="Trabalham com Ecommerce?"
+          answer="Sim! Temos experiência com ecommerces em plataformas como Woocommerce, Shopify, MercadoShops e etc."
+        />
+        <Question
+          question="Como fazer um orçamento?"
+          answer="Ao entrar em contato conosco, marcamos uma reunião para pegar os dados do projeto, estipular prazos e orçamentos. Todo pequeno detalhe de um site pode variar o tempo de entrega, então dificilmente dois sites terão preços iguais. Ao concluir o orçamento, enviamos a proposta pelo email ou whatsapp."
+        />
+        <Question
+          question="Quanto tempo demora para criar um site?"
+          answer="Depende. Ecommerces são mais demorados que sites institucionais e portfólios, que podem levar até 6 semanas para ficar pronto dependendo da complexidade. Já Landing Pages demoram, em média, 10 dias corridos."
+        />
+        <Question
+          question="Vocês fazem suporte em sites?"
+          answer="Somente em sites desenvolvidos e hospedados conosco. Para sites já prontos, atuamos com serviços de performance e de desenvolvimento de funções, mas somende dentro do horário comercial."
+        />
+        <Question
+          question="Qual o horário do suporte?"
+          answer="Sempre monitoramos o seu site. Em caso de quedas e instabilidade resolveremos o mais rápido possível, independente do dia e horário. Em caso de dúvida, atendemos das 08h às 19h pelo horário de Brasilia."
+        />
+        <Question
+          question="Quais os meios de pagamento?"
+          answer="Aceitamos Pix e Cartão de Crédito. Utilizamos a InfinitePay para nossas transações."
         />
       </div>
     </div>
