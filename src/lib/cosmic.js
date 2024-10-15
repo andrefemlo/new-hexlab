@@ -20,6 +20,21 @@ export async function getAllCases() {
     })
     .props('title,slug,metadata,created_at').sort('-created_at').depth(2)
   return data.objects
+} export async function getLimitedPosts() {
+  const data = await cosmic.objects
+    .find({
+      type: 'posts'
+    })
+    .props('title,slug,metadata,created_at,excerpt').limit(3).sort('-created_at').depth(2)
+  return data.objects
+}
+export async function getLimitedCases() {
+  const data = await cosmic.objects
+    .find({
+      type: 'cases'
+    })
+    .props('title,slug,metadata,created_at').limit(3).sort('-created_at').depth(2)
+  return data.objects
 }
 
 export async function searchContent(query) {

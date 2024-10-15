@@ -1,0 +1,32 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import Heading from "../../layouts/Heading.astro";
+import Section from "../../layouts/Section.astro";
+import { getLimitedPosts } from "../../lib/cosmic";
+
+const allCases = await getLimitedPosts();
+---
+
+<Section classes="pt-20">
+  <h2
+    class="text-3xl sm:text-4xl tracking-tight font-medium md:text-5xl font-display"
+  >
+    Posts Recentes
+  </h2>
+</Section>
+<Section>
+  <div
+    class="grid sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4 pb-20 pt-10"
+  >
+    {
+      allCases.map((post) => (
+        <BlogPost
+          title={post.title}
+          url={`/blog/${post.slug}`}
+          imageurl={`${post.metadata.cover_image.imgix_url}?w=500&auto=format,compression`}
+          imagealt={post.title}
+        />
+      ))
+    }
+  </div>
+</Section>
